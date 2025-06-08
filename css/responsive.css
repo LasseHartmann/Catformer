@@ -1,0 +1,537 @@
+/* Responsive Design für verschiedene Bildschirmgrößen */
+
+/* Tablet Landscape (1024px - 1199px) */
+@media screen and (max-width: 1199px) and (min-width: 1024px) {
+    #gameWorld {
+        transform: scale(0.9);
+        transform-origin: top left;
+    }
+    
+    .cat {
+        width: 55px;
+        height: 36px;
+    }
+    
+    .obstacle {
+        transform: scale(0.9);
+    }
+    
+    .powerup {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    #gameContainer {
+        height: 100vh;
+    }
+    
+    #gameWorld {
+        transform: scale(0.8);
+        transform-origin: top left;
+    }
+    
+    .cat {
+        width: 50px;
+        height: 32px;
+        left: 80px;
+    }
+    
+    .cat-body {
+        width: 38px;
+        height: 20px;
+    }
+    
+    .cat-head {
+        width: 25px;
+        height: 20px;
+    }
+    
+    .obstacle {
+        transform: scale(0.8);
+    }
+    
+    .dog-small {
+        width: 32px;
+        height: 20px;
+    }
+    
+    .dog-large {
+        width: 48px;
+        height: 36px;
+    }
+    
+    .powerup {
+        width: 25px;
+        height: 25px;
+        bottom: 100px;
+    }
+    
+    #gameUI {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+    }
+    
+    #scoreDisplay, #livesDisplay {
+        padding: 8px 16px;
+        font-size: 1.1rem;
+    }
+    
+    #touchControls {
+        display: block;
+    }
+    
+    #jumpButton {
+        padding: 18px 35px;
+        font-size: 1.1rem;
+    }
+    
+    /* Menü-Anpassungen */
+    #mainMenu h1 {
+        font-size: 2.5rem;
+    }
+    
+    .game-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Landscape (568px - 767px) */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    #gameContainer {
+        height: 100vh;
+    }
+    
+    #gameWorld {
+        transform: scale(0.7);
+        transform-origin: top left;
+    }
+    
+    .cat {
+        width: 45px;
+        height: 28px;
+        left: 60px;
+    }
+    
+    .cat-body {
+        width: 32px;
+        height: 18px;
+    }
+    
+    .cat-head {
+        width: 22px;
+        height: 18px;
+    }
+    
+    .cat-tail {
+        width: 16px;
+        height: 5px;
+    }
+    
+    .obstacle {
+        transform: scale(0.7);
+    }
+    
+    .powerup {
+        width: 22px;
+        height: 22px;
+        bottom: 90px;
+    }
+    
+    #gameUI {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    #scoreDisplay, #livesDisplay {
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
+    
+    #touchControls {
+        display: block;
+        bottom: 10px;
+    }
+    
+    #jumpButton {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    
+    /* Menü-Anpassungen */
+    #mainMenu h1 {
+        font-size: 2rem;
+    }
+    
+    #mainMenu p {
+        font-size: 1rem;
+    }
+    
+    .controls-info {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .game-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 8px;
+    }
+}
+
+/* Mobile Portrait (320px - 567px) */
+@media screen and (max-width: 567px) {
+    #gameContainer {
+        height: 100vh;
+        height: 100dvh; /* Dynamic viewport height für mobile Browser */
+    }
+    
+    #gameWorld {
+        transform: scale(0.6);
+        transform-origin: top left;
+        height: calc(100vh - 80px);
+    }
+    
+    .cat {
+        width: 40px;
+        height: 25px;
+        left: 50px;
+    }
+    
+    .cat-body {
+        width: 28px;
+        height: 15px;
+    }
+    
+    .cat-head {
+        width: 18px;
+        height: 15px;
+    }
+    
+    .cat-head::before,
+    .cat-head::after {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 8px solid #FF6B35;
+    }
+    
+    .cat-tail {
+        width: 14px;
+        height: 4px;
+        right: -12px;
+    }
+    
+    .cat-legs::before,
+    .cat-legs::after {
+        width: 4px;
+        height: 6px;
+    }
+    
+    .obstacle {
+        transform: scale(0.6);
+    }
+    
+    .dog-small {
+        width: 24px;
+        height: 15px;
+    }
+    
+    .dog-large {
+        width: 36px;
+        height: 27px;
+    }
+    
+    .powerup {
+        width: 20px;
+        height: 20px;
+        bottom: 80px;
+    }
+    
+    #ground {
+        height: 40px;
+    }
+    
+    #gameUI {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    #scoreDisplay, #livesDisplay {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        border-radius: 15px;
+    }
+    
+    #pauseButton {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+    
+    #touchControls {
+        display: block;
+        bottom: 10px;
+    }
+    
+    #jumpButton {
+        padding: 20px 40px;
+        font-size: 1.1rem;
+        border-radius: 40px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    
+    /* Menü-Anpassungen für Mobile */
+    #mainMenu {
+        padding: 20px;
+    }
+    
+    #mainMenu h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    #mainMenu p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .controls-info {
+        padding: 0.8rem;
+        font-size: 0.85rem;
+        margin-top: 1.5rem;
+    }
+    
+    .controls-info p {
+        margin: 0.3rem 0;
+    }
+    
+    .game-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+        margin: 8px 5px;
+        min-width: 140px;
+    }
+    
+    /* Pause und Game Over Bildschirme */
+    #pauseMenu h2, #gameOverScreen h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    #gameOverScreen p {
+        font-size: 1.1rem;
+        margin: 0.8rem 0;
+    }
+    
+    /* Hintergrund-Anpassungen für Mobile */
+    .bg-layer {
+        opacity: 0.7; /* Reduzierte Opazität für bessere Performance */
+    }
+    
+    /* Animation-Optimierungen für Mobile */
+    .cat.running .cat-body {
+        animation-duration: 0.5s; /* Langsamere Animationen */
+    }
+    
+    .cat.running .cat-tail {
+        animation-duration: 0.8s;
+    }
+    
+    @keyframes mobileFloat {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+    }
+    
+    .powerup {
+        animation: mobileFloat 2.5s ease-in-out infinite;
+    }
+}
+
+/* Sehr kleine Bildschirme (< 320px) */
+@media screen and (max-width: 319px) {
+    #gameWorld {
+        transform: scale(0.5);
+    }
+    
+    .cat {
+        width: 35px;
+        height: 22px;
+    }
+    
+    #mainMenu h1 {
+        font-size: 1.8rem;
+    }
+    
+    .game-button {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        min-width: 120px;
+    }
+    
+    #jumpButton {
+        padding: 18px 35px;
+        font-size: 1rem;
+    }
+}
+
+/* Touch-spezifische Anpassungen */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch-Geräte */
+    .game-button, .ui-button {
+        min-height: 44px; /* Mindestgröße für Touch-Targets */
+        min-width: 44px;
+    }
+    
+    #jumpButton {
+        min-height: 60px;
+        min-width: 120px;
+    }
+    
+    /* Hover-Effekte deaktivieren */
+    .game-button:hover, .ui-button:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    /* Touch-Feedback */
+    .game-button:active, .ui-button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
+    
+    #jumpButton:active {
+        transform: scale(0.9);
+        background: rgba(255, 107, 53, 1);
+    }
+}
+
+/* Hochformat-spezifische Anpassungen */
+@media screen and (orientation: portrait) {
+    #touchControls {
+        display: block;
+    }
+    
+    /* Verhindere horizontales Scrollen */
+    body {
+        overflow-x: hidden;
+    }
+    
+    #gameContainer {
+        overflow-x: hidden;
+    }
+}
+
+/* Querformat-spezifische Anpassungen */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    /* Kompakte UI für kleine Querformat-Bildschirme */
+    #gameUI {
+        top: 5px;
+        left: 5px;
+        right: 5px;
+    }
+    
+    #scoreDisplay, #livesDisplay {
+        padding: 4px 8px;
+        font-size: 0.8rem;
+    }
+    
+    #touchControls {
+        bottom: 5px;
+    }
+    
+    #jumpButton {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+    
+    #mainMenu h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    #mainMenu p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .controls-info {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+}
+
+/* Performance-Optimierungen für schwächere Geräte */
+@media screen and (max-width: 767px) {
+    /* Reduzierte Animationen für bessere Performance */
+    .bg-layer {
+        animation-duration: 25s, 20s, 15s !important;
+    }
+    
+    /* Vereinfachte Schatten */
+    .game-button, .ui-button {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    .powerup {
+        box-shadow: 0 0 10px currentColor;
+    }
+    
+    /* Reduzierte Transparenz */
+    .bg-layer {
+        opacity: 0.6;
+    }
+    
+    /* Vereinfachte Gradients */
+    .cat-body, .cat-head {
+        background: #FF6B35; /* Solid color statt Gradient */
+    }
+}
+
+/* Accessibility - Reduzierte Bewegung */
+@media (prefers-reduced-motion: reduce) {
+    .cat, .obstacle, .powerup {
+        animation: none !important;
+    }
+    
+    .bg-layer {
+        animation: none !important;
+    }
+    
+    #ground {
+        animation: none !important;
+    }
+    
+    .game-button:hover {
+        transform: none;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    #scoreDisplay, #livesDisplay {
+        background: rgba(0,0,0,0.8);
+        color: white;
+    }
+    
+    #pauseButton {
+        background: rgba(0,0,0,0.8);
+        color: white;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Schärfere Darstellung für Retina-Displays */
+    .cat, .obstacle, .powerup {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}

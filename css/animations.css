@@ -1,0 +1,366 @@
+/* Hintergrund-Animationen */
+@keyframes moveBackground1 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes moveBackground2 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes moveBackground3 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes moveGround {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Katzen-Animationen */
+@keyframes catRun {
+    0% { transform: translateY(0px); }
+    25% { transform: translateY(-3px); }
+    50% { transform: translateY(0px); }
+    75% { transform: translateY(-2px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes tailWag {
+    0% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(-15deg); }
+}
+
+@keyframes catJump {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    30% {
+        transform: translateY(-140px) rotate(-10deg);
+    }
+    70% {
+        transform: translateY(-140px) rotate(-10deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes catLand {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(0.8) scaleX(1.1); }
+    100% { transform: scaleY(1) scaleX(1); }
+}
+
+/* Power-up Animationen */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-15px) rotate(180deg); 
+    }
+}
+
+@keyframes powerupCollect {
+    0% { 
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.5) rotate(180deg);
+        opacity: 0.7;
+    }
+    100% { 
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes powerupSpawn {
+    0% { 
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% { 
+        transform: scale(1.2) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Power-up Effekte auf der Katze */
+@keyframes shieldEffect {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+    50% { 
+        box-shadow: 0 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+}
+
+@keyframes speedEffect {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
+    }
+    50% { 
+        box-shadow: 0 0 0 8px rgba(255, 69, 0, 0.4);
+    }
+}
+
+@keyframes jumpEffect {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(0, 191, 255, 0.7);
+    }
+    50% { 
+        box-shadow: 0 0 0 12px rgba(0, 191, 255, 0.3);
+    }
+}
+
+@keyframes magnetEffect {
+    0%, 100% { 
+        box-shadow: 0 0 0 0 rgba(50, 205, 50, 0.7);
+    }
+    50% { 
+        box-shadow: 0 0 0 15px rgba(50, 205, 50, 0.2);
+    }
+}
+
+/* Hindernisse Animationen */
+@keyframes dogWalk {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+}
+
+@keyframes dogBark {
+    0%, 100% { transform: scaleX(1); }
+    25% { transform: scaleX(1.1); }
+    75% { transform: scaleX(0.9); }
+}
+
+@keyframes obstacleMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100vw); }
+}
+
+/* Kollisions-Effekte */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes explosion {
+    0% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+    100% { 
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* UI Animationen */
+@keyframes scoreIncrease {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes buttonPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes fadeIn {
+    0% { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% { 
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slideInFromRight {
+    0% { 
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% { 
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToLeft {
+    0% { 
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% { 
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Partikel-Effekte */
+@keyframes sparkle {
+    0%, 100% { 
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% { 
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+@keyframes trail {
+    0% { 
+        transform: translateX(0) scale(1);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translateX(-50px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Spezielle Effekt-Klassen */
+.cat.running .cat-body {
+    animation: catRun 0.4s infinite;
+}
+
+.cat.running .cat-tail {
+    animation: tailWag 0.6s infinite;
+}
+
+.cat.jumping {
+    animation: catJump 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cat.landing .cat-body {
+    animation: catLand 0.2s ease-out;
+}
+
+.cat.shield-active {
+    animation: shieldEffect 1s infinite;
+}
+
+.cat.speed-active {
+    animation: speedEffect 0.8s infinite;
+}
+
+.cat.jump-active {
+    animation: jumpEffect 1.2s infinite;
+}
+
+.cat.magnet-active {
+    animation: magnetEffect 1.5s infinite;
+}
+
+.obstacle.moving {
+    animation: obstacleMove linear;
+}
+
+.dog-small.walking {
+    animation: dogWalk 0.8s infinite;
+}
+
+.dog-large.walking {
+    animation: dogWalk 1s infinite;
+}
+
+.powerup.spawning {
+    animation: powerupSpawn 0.5s ease-out;
+}
+
+.powerup.collecting {
+    animation: powerupCollect 0.3s ease-in;
+}
+
+.game-button:hover {
+    animation: buttonPulse 1s infinite;
+}
+
+.score-increase {
+    animation: scoreIncrease 0.3s ease-out;
+}
+
+.screen.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.screen.fade-out {
+    animation: fadeOut 0.3s ease-in;
+}
+
+.collision-effect {
+    animation: shake 0.5s ease-in-out, flash 0.1s ease-in-out 5;
+}
+
+/* Responsive Animationen - reduzierte Bewegung für schwächere Geräte */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Performance-Optimierungen */
+.cat, .obstacle, .powerup, .bg-layer {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Spezielle Animationen für verschiedene Geschwindigkeitsstufen */
+.speed-level-1 .bg-layer {
+    animation-duration: 20s, 15s, 10s;
+}
+
+.speed-level-2 .bg-layer {
+    animation-duration: 15s, 12s, 8s;
+}
+
+.speed-level-3 .bg-layer {
+    animation-duration: 12s, 9s, 6s;
+}
+
+.speed-level-4 .bg-layer {
+    animation-duration: 10s, 7s, 5s;
+}
+
+.speed-level-5 .bg-layer {
+    animation-duration: 8s, 6s, 4s;
+}

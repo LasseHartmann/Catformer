@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐱 Katzen-Sprungspiel</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/backgrounds.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Hauptmenü -->
+        <div id="mainMenu" class="screen">
+            <h1>🐱 Katzen-Sprungspiel</h1>
+            <p>Hilf der Katze über die Hunde zu springen!</p>
+            <button id="startButton" class="game-button">Spiel starten</button>
+            <div class="controls-info">
+                <p><strong>Steuerung:</strong></p>
+                <p>🖥️ Desktop: Leertaste oder Klick</p>
+                <p>📱 Mobile: Bildschirm berühren</p>
+            </div>
+        </div>
+
+        <!-- Spielbereich -->
+        <div id="gameScreen" class="screen hidden">
+            <div id="gameUI">
+                <div id="scoreDisplay">Score: <span id="score">0</span></div>
+                <div id="livesDisplay">❤️ <span id="lives">3</span></div>
+                <button id="pauseButton" class="ui-button">⏸️</button>
+            </div>
+            
+            <div id="gameWorld">
+                <!-- Hintergrund-Ebenen für Parallax -->
+                <div id="backgroundLayer1" class="bg-layer"></div>
+                <div id="backgroundLayer2" class="bg-layer"></div>
+                <div id="backgroundLayer3" class="bg-layer"></div>
+                
+                <!-- Spieler (Katze) -->
+                <div id="player" class="cat">
+                    <div class="cat-body"></div>
+                    <div class="cat-head"></div>
+                    <div class="cat-face"></div>
+                    <div class="cat-tail"></div>
+                    <div class="cat-legs"></div>
+                </div>
+                
+                <!-- Container für Hindernisse -->
+                <div id="obstaclesContainer"></div>
+                
+                <!-- Container für Power-ups -->
+                <div id="powerupsContainer"></div>
+                
+                <!-- Boden -->
+                <div id="ground"></div>
+            </div>
+        </div>
+
+        <!-- Pause-Menü -->
+        <div id="pauseMenu" class="screen hidden">
+            <h2>⏸️ Pause</h2>
+            <button id="resumeButton" class="game-button">Weiter spielen</button>
+            <button id="restartButton" class="game-button">Neu starten</button>
+            <button id="mainMenuButton" class="game-button">Hauptmenü</button>
+        </div>
+
+        <!-- Game Over Bildschirm -->
+        <div id="gameOverScreen" class="screen hidden">
+            <h2>💥 Game Over!</h2>
+            <p>Dein Score: <span id="finalScore">0</span></p>
+            <p>Bester Score: <span id="highScore">0</span></p>
+            <button id="playAgainButton" class="game-button">Nochmal spielen</button>
+            <button id="backToMenuButton" class="game-button">Hauptmenü</button>
+        </div>
+
+        <!-- Touch-Steuerung für Mobile -->
+        <div id="touchControls" class="hidden">
+            <div id="jumpButton">🐾 SPRUNG</div>
+        </div>
+    </div>
+
+    <!-- JavaScript-Module -->
+    <script src="js/utils.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/obstacles.js"></script>
+    <script src="js/powerups.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

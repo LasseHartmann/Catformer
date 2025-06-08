@@ -1,0 +1,473 @@
+/* Reset und Grundlagen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #87CEEB 0%, #98FB98 100%);
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+#gameContainer {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bildschirm-Management */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Hauptmenü */
+#mainMenu {
+    background: linear-gradient(45deg, #FF6B35, #F7931E);
+    color: white;
+    text-align: center;
+}
+
+#mainMenu h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#mainMenu p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.controls-info {
+    margin-top: 2rem;
+    background: rgba(255,255,255,0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+/* Buttons */
+.game-button, .ui-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.game-button:hover, .ui-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.game-button:active, .ui-button:active {
+    transform: translateY(0);
+}
+
+/* Spielbereich */
+#gameScreen {
+    background: linear-gradient(180deg, #87CEEB 0%, #98FB98 70%, #90EE90 100%);
+}
+
+#gameUI {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+#scoreDisplay, #livesDisplay {
+    background: rgba(255,255,255,0.9);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+#pauseButton {
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+}
+
+/* Spielwelt */
+#gameWorld {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Hintergrund-Ebenen */
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    z-index: 1;
+}
+
+#backgroundLayer1 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="30" r="15" fill="white" opacity="0.7"/><circle cx="60" cy="20" r="20" fill="white" opacity="0.5"/><circle cx="80" cy="40" r="12" fill="white" opacity="0.6"/></svg>') repeat-x;
+    animation: moveBackground1 20s linear infinite;
+}
+
+#backgroundLayer2 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="10" y="70" width="15" height="30" fill="green" opacity="0.6"/><rect x="40" y="65" width="20" height="35" fill="darkgreen" opacity="0.7"/><rect x="80" y="75" width="10" height="25" fill="green" opacity="0.5"/></svg>') repeat-x;
+    animation: moveBackground2 15s linear infinite;
+}
+
+#backgroundLayer3 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="85" width="8" height="15" fill="brown" opacity="0.8"/><rect x="60" y="80" width="12" height="20" fill="saddlebrown" opacity="0.7"/></svg>') repeat-x;
+    animation: moveBackground3 10s linear infinite;
+}
+
+/* Boden */
+#ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 60px;
+    background: linear-gradient(180deg, #8FBC8F 0%, #228B22 100%);
+    border-top: 3px solid #006400;
+    z-index: 2;
+    animation: moveGround 3s linear infinite;
+}
+
+#ground::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 48px,
+        rgba(0,100,0,0.3) 48px,
+        rgba(0,100,0,0.3) 52px
+    );
+}
+
+/* Katzen-Sprite - Neu erstellt, schaut nach rechts */
+.cat {
+    position: absolute;
+    bottom: 60px;
+    left: 100px;
+    width: 60px;
+    height: 40px;
+    z-index: 10;
+    transition: bottom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cat-body {
+    position: absolute;
+    width: 45px;
+    height: 25px;
+    background: linear-gradient(45deg, #FF6B35, #F7931E);
+    border-radius: 8px 20px 20px 8px;
+    bottom: 0;
+    left: 10px;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.3);
+}
+
+.cat-head {
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    background: linear-gradient(45deg, #FF6B35, #F7931E);
+    border-radius: 50%;
+    bottom: 15px;
+    right: 5px;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.3);
+}
+
+/* Katzenohren - nach rechts orientiert */
+.cat-head::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 3px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid #FF6B35;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+}
+
+.cat-head::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 3px;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid #FF6B35;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.2));
+}
+
+/* Katzenschwanz - links positioniert für nach rechts schauende Katze */
+.cat-tail {
+    position: absolute;
+    left: -15px;
+    bottom: 8px;
+    width: 20px;
+    height: 6px;
+    background: linear-gradient(90deg, #FF6B35, #F7931E);
+    border-radius: 10px;
+    transform-origin: right center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Katzenbeine */
+.cat-legs {
+    position: absolute;
+    bottom: -8px;
+    left: 15px;
+    width: 35px;
+    height: 8px;
+}
+
+.cat-legs::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+    width: 6px;
+    height: 8px;
+    background: linear-gradient(180deg, #FF6B35, #E55A2B);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.cat-legs::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    width: 6px;
+    height: 8px;
+    background: linear-gradient(180deg, #FF6B35, #E55A2B);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Katzengesicht - Augen und Nase für nach rechts schauende Katze */
+.cat-face {
+    position: absolute;
+    right: 8px;
+    bottom: 18px;
+    width: 20px;
+    height: 15px;
+}
+
+.cat-face::before {
+    content: '';
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    width: 3px;
+    height: 3px;
+    background: #000;
+    border-radius: 50%;
+    box-shadow: 0 6px 0 #000, 4px 3px 0 #000;
+}
+
+.cat-face::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    width: 0;
+    height: 0;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-top: 2px solid #FF1493;
+}
+
+/* Hindernisse */
+.obstacle {
+    position: absolute;
+    bottom: 60px;
+    z-index: 5;
+}
+
+.dog-small {
+    width: 40px;
+    height: 25px;
+    background: linear-gradient(45deg, #8B4513, #A0522D);
+    border-radius: 15px 15px 5px 5px;
+    position: relative;
+}
+
+.dog-small::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 5px;
+    width: 8px;
+    height: 10px;
+    background: #8B4513;
+    border-radius: 50% 50% 0 0;
+}
+
+.dog-small::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 5px;
+    width: 8px;
+    height: 10px;
+    background: #8B4513;
+    border-radius: 50% 50% 0 0;
+}
+
+.dog-large {
+    width: 60px;
+    height: 45px;
+    background: linear-gradient(45deg, #654321, #8B4513);
+    border-radius: 20px 20px 8px 8px;
+    position: relative;
+}
+
+.dog-large::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 8px;
+    width: 12px;
+    height: 15px;
+    background: #654321;
+    border-radius: 50% 50% 0 0;
+}
+
+.dog-large::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    right: 8px;
+    width: 12px;
+    height: 15px;
+    background: #654321;
+    border-radius: 50% 50% 0 0;
+}
+
+/* Power-ups */
+.powerup {
+    position: absolute;
+    bottom: 120px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 6;
+    animation: float 2s ease-in-out infinite;
+}
+
+.powerup-jump {
+    background: radial-gradient(circle, #00BFFF, #0080FF);
+    box-shadow: 0 0 20px #00BFFF;
+}
+
+.powerup-shield {
+    background: radial-gradient(circle, #FFD700, #FFB347);
+    box-shadow: 0 0 20px #FFD700;
+}
+
+.powerup-speed {
+    background: radial-gradient(circle, #FF4500, #FF6347);
+    box-shadow: 0 0 20px #FF4500;
+}
+
+.powerup-magnet {
+    background: radial-gradient(circle, #32CD32, #228B22);
+    box-shadow: 0 0 20px #32CD32;
+}
+
+/* Touch-Steuerung */
+#touchControls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+#jumpButton {
+    padding: 20px 40px;
+    background: rgba(255, 107, 53, 0.9);
+    color: white;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+}
+
+#jumpButton:active {
+    transform: scale(0.95);
+    background: rgba(255, 107, 53, 1);
+}
+
+/* Pause und Game Over Bildschirme */
+#pauseMenu, #gameOverScreen {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+#pauseMenu h2, #gameOverScreen h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#gameOverScreen p {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+}
+
+#finalScore, #highScore {
+    color: #FFD700;
+    font-weight: bold;
+}

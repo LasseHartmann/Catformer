@@ -1,0 +1,211 @@
+/* Hintergrund-Themen */
+.background-park {
+    background: linear-gradient(180deg, #87CEEB 0%, #98FB98 70%, #90EE90 100%);
+}
+
+.background-city {
+    background: linear-gradient(180deg, #4682B4 0%, #708090 50%, #696969 100%);
+}
+
+.background-beach {
+    background: linear-gradient(180deg, #FFE4B5 0%, #F0E68C 50%, #DEB887 100%);
+}
+
+.background-forest {
+    background: linear-gradient(180deg, #228B22 0%, #32CD32 50%, #90EE90 100%);
+}
+
+.background-night {
+    background: linear-gradient(180deg, #191970 0%, #483D8B 50%, #2F4F4F 100%);
+}
+
+/* Park-Thema Hintergrund-Ebenen */
+.background-park #backgroundLayer1 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="30" cy="25" r="18" fill="white" opacity="0.8"/><circle cx="25" cy="30" r="15" fill="white" opacity="0.6"/><circle cx="35" cy="28" r="12" fill="white" opacity="0.7"/><circle cx="120" cy="20" r="22" fill="white" opacity="0.5"/><circle cx="115" cy="25" r="18" fill="white" opacity="0.6"/><circle cx="125" cy="23" r="15" fill="white" opacity="0.7"/><circle cx="170" cy="35" r="16" fill="white" opacity="0.6"/></svg>') repeat-x;
+}
+
+.background-park #backgroundLayer2 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><ellipse cx="25" cy="85" rx="20" ry="15" fill="green" opacity="0.7"/><ellipse cx="75" cy="80" rx="25" ry="20" fill="darkgreen" opacity="0.6"/><ellipse cx="125" cy="85" rx="18" ry="12" fill="green" opacity="0.8"/><ellipse cx="175" cy="82" rx="22" ry="18" fill="forestgreen" opacity="0.7"/></svg>') repeat-x;
+}
+
+.background-park #backgroundLayer3 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><rect x="40" y="70" width="8" height="30" fill="saddlebrown"/><ellipse cx="44" cy="65" rx="15" ry="10" fill="green" opacity="0.8"/><rect x="120" y="75" width="6" height="25" fill="brown"/><ellipse cx="123" cy="70" rx="12" ry="8" fill="darkgreen" opacity="0.7"/></svg>') repeat-x;
+}
+
+/* Stadt-Thema Hintergrund-Ebenen */
+.background-city #backgroundLayer1 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><rect x="20" y="30" width="15" height="70" fill="gray" opacity="0.6"/><rect x="22" y="32" width="2" height="3" fill="yellow" opacity="0.8"/><rect x="26" y="35" width="2" height="3" fill="yellow" opacity="0.8"/><rect x="30" y="38" width="2" height="3" fill="yellow" opacity="0.8"/><rect x="60" y="20" width="20" height="80" fill="darkgray" opacity="0.7"/><rect x="65" y="25" width="3" height="4" fill="yellow" opacity="0.9"/><rect x="70" y="30" width="3" height="4" fill="yellow" opacity="0.9"/><rect x="120" y="40" width="12" height="60" fill="gray" opacity="0.5"/><rect x="160" y="25" width="18" height="75" fill="slategray" opacity="0.6"/></svg>') repeat-x;
+}
+
+.background-city #backgroundLayer2 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><rect x="10" y="60" width="25" height="40" fill="dimgray" opacity="0.8"/><rect x="50" y="55" width="30" height="45" fill="gray" opacity="0.7"/><rect x="100" y="65" width="20" height="35" fill="darkslategray" opacity="0.6"/><rect x="140" y="50" width="35" height="50" fill="slategray" opacity="0.8"/></svg>') repeat-x;
+}
+
+.background-city #backgroundLayer3 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><rect x="0" y="85" width="200" height="15" fill="darkgray"/><rect x="30" y="83" width="4" height="17" fill="yellow" opacity="0.6"/><rect x="80" y="83" width="4" height="17" fill="yellow" opacity="0.6"/><rect x="130" y="83" width="4" height="17" fill="yellow" opacity="0.6"/></svg>') repeat-x;
+}
+
+/* Strand-Thema Hintergrund-Ebenen */
+.background-beach #backgroundLayer1 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="40" cy="30" r="20" fill="white" opacity="0.9"/><circle cx="35" cy="35" r="16" fill="white" opacity="0.7"/><circle cx="45" cy="32" r="14" fill="white" opacity="0.8"/><circle cx="140" cy="25" r="18" fill="white" opacity="0.6"/><circle cx="135" cy="30" r="15" fill="white" opacity="0.8"/></svg>') repeat-x;
+}
+
+.background-beach #backgroundLayer2 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><path d="M0,70 Q50,60 100,70 T200,70 L200,100 L0,100 Z" fill="dodgerblue" opacity="0.7"/><path d="M0,75 Q50,65 100,75 T200,75 L200,100 L0,100 Z" fill="blue" opacity="0.5"/></svg>') repeat-x;
+}
+
+.background-beach #backgroundLayer3 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><rect x="60" y="65" width="8" height="35" fill="saddlebrown"/><ellipse cx="64" cy="60" rx="20" ry="8" fill="green" opacity="0.8"/><ellipse cx="64" cy="58" rx="15" ry="6" fill="darkgreen" opacity="0.6"/></svg>') repeat-x;
+}
+
+/* Wald-Thema Hintergrund-Ebenen */
+.background-forest #backgroundLayer1 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="30" cy="40" r="12" fill="lightgreen" opacity="0.6"/><circle cx="25" cy="45" r="10" fill="lightgreen" opacity="0.5"/><circle cx="35" cy="42" r="8" fill="lightgreen" opacity="0.7"/><circle cx="120" cy="35" r="15" fill="lightgreen" opacity="0.5"/><circle cx="170" cy="45" r="10" fill="lightgreen" opacity="0.6"/></svg>') repeat-x;
+}
+
+.background-forest #backgroundLayer2 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><polygon points="20,100 25,60 30,100" fill="saddlebrown"/><polygon points="15,70 25,40 35,70" fill="darkgreen" opacity="0.8"/><polygon points="70,100 75,55 80,100" fill="brown"/><polygon points="65,65 75,35 85,65" fill="forestgreen" opacity="0.7"/><polygon points="130,100 135,65 140,100" fill="saddlebrown"/><polygon points="125,75 135,45 145,75" fill="darkgreen" opacity="0.8"/></svg>') repeat-x;
+}
+
+.background-forest #backgroundLayer3 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><ellipse cx="40" cy="90" rx="25" ry="10" fill="darkgreen" opacity="0.6"/><ellipse cx="100" cy="88" rx="30" ry="12" fill="green" opacity="0.7"/><ellipse cx="160" cy="92" rx="20" ry="8" fill="forestgreen" opacity="0.5"/></svg>') repeat-x;
+}
+
+/* Nacht-Thema Hintergrund-Ebenen */
+.background-night #backgroundLayer1 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><circle cx="30" cy="20" r="2" fill="white" opacity="0.9"/><circle cx="60" cy="15" r="1.5" fill="white" opacity="0.8"/><circle cx="90" cy="25" r="1" fill="white" opacity="0.7"/><circle cx="120" cy="18" r="2" fill="white" opacity="0.9"/><circle cx="150" cy="22" r="1.5" fill="white" opacity="0.8"/><circle cx="180" cy="16" r="1" fill="white" opacity="0.7"/><circle cx="170" cy="30" r="8" fill="lightyellow" opacity="0.8"/></svg>') repeat-x;
+}
+
+.background-night #backgroundLayer2 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><rect x="20" y="40" width="15" height="60" fill="black" opacity="0.8"/><rect x="22" y="45" width="2" height="3" fill="yellow" opacity="0.6"/><rect x="26" y="50" width="2" height="3" fill="yellow" opacity="0.6"/><rect x="60" y="35" width="20" height="65" fill="darkslategray" opacity="0.7"/><rect x="120" y="50" width="12" height="50" fill="black" opacity="0.6"/><rect x="160" y="30" width="18" height="70" fill="darkslategray" opacity="0.8"/></svg>') repeat-x;
+}
+
+.background-night #backgroundLayer3 {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><rect x="0" y="85" width="200" height="15" fill="black" opacity="0.9"/><rect x="30" y="83" width="4" height="17" fill="orange" opacity="0.8"/><rect x="80" y="83" width="4" height="17" fill="orange" opacity="0.8"/><rect x="130" y="83" width="4" height="17" fill="orange" opacity="0.8"/></svg>') repeat-x;
+}
+
+/* Boden-Variationen für verschiedene Themen */
+.background-park #ground {
+    background: linear-gradient(180deg, #8FBC8F 0%, #228B22 100%);
+    border-top: 3px solid #006400;
+}
+
+.background-city #ground {
+    background: linear-gradient(180deg, #696969 0%, #2F4F4F 100%);
+    border-top: 3px solid #000000;
+}
+
+.background-city #ground::before {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 48px,
+        rgba(255,255,255,0.2) 48px,
+        rgba(255,255,255,0.2) 52px
+    );
+}
+
+.background-beach #ground {
+    background: linear-gradient(180deg, #F4A460 0%, #DEB887 100%);
+    border-top: 3px solid #CD853F;
+}
+
+.background-beach #ground::before {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 20px,
+        rgba(255,255,255,0.3) 20px,
+        rgba(255,255,255,0.3) 22px
+    );
+}
+
+.background-forest #ground {
+    background: linear-gradient(180deg, #654321 0%, #8B4513 100%);
+    border-top: 3px solid #2F4F2F;
+}
+
+.background-forest #ground::before {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 30px,
+        rgba(139,69,19,0.5) 30px,
+        rgba(139,69,19,0.5) 35px
+    );
+}
+
+.background-night #ground {
+    background: linear-gradient(180deg, #2F4F4F 0%, #000000 100%);
+    border-top: 3px solid #4B0082;
+}
+
+.background-night #ground::before {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 48px,
+        rgba(75,0,130,0.3) 48px,
+        rgba(75,0,130,0.3) 52px
+    );
+}
+
+/* Wettereffekte */
+.weather-rain::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><line x1="10" y1="0" x2="8" y2="20" stroke="lightblue" stroke-width="1" opacity="0.6"/><line x1="30" y1="0" x2="28" y2="25" stroke="lightblue" stroke-width="1" opacity="0.7"/><line x1="50" y1="0" x2="48" y2="18" stroke="lightblue" stroke-width="1" opacity="0.5"/><line x1="70" y1="0" x2="68" y2="22" stroke="lightblue" stroke-width="1" opacity="0.6"/><line x1="90" y1="0" x2="88" y2="20" stroke="lightblue" stroke-width="1" opacity="0.7"/></svg>') repeat;
+    animation: rainFall 1s linear infinite;
+    pointer-events: none;
+    z-index: 50;
+}
+
+.weather-snow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="15" cy="20" r="2" fill="white" opacity="0.8"/><circle cx="35" cy="10" r="1.5" fill="white" opacity="0.7"/><circle cx="55" cy="25" r="2" fill="white" opacity="0.9"/><circle cx="75" cy="15" r="1" fill="white" opacity="0.6"/><circle cx="85" cy="30" r="1.5" fill="white" opacity="0.8"/></svg>') repeat;
+    animation: snowFall 3s linear infinite;
+    pointer-events: none;
+    z-index: 50;
+}
+
+@keyframes rainFall {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
+}
+
+@keyframes snowFall {
+    0% { transform: translateY(-100px) translateX(0); }
+    50% { transform: translateY(50vh) translateX(10px); }
+    100% { transform: translateY(100vh) translateX(-5px); }
+}
+
+/* Tageszeit-Übergänge */
+.time-transition {
+    transition: all 2s ease-in-out;
+}
+
+/* Spezielle Effekte für verschiedene Umgebungen */
+.background-beach .powerup {
+    filter: brightness(1.2) saturate(1.1);
+}
+
+.background-night .powerup {
+    filter: brightness(1.3) drop-shadow(0 0 10px currentColor);
+}
+
+.background-forest .cat {
+    filter: hue-rotate(10deg);
+}
+
+.background-city .obstacle {
+    filter: contrast(1.1) brightness(0.9);
+}
